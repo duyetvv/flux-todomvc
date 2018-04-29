@@ -1,15 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { Provider } from 'react-redux';
+
+import './styles/index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-import TodoActions from './data/TodoActions';
+import configureStore from './todo-redux-thunk/store'
+const store = configureStore()
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
 
-
-TodoActions.addTodo('My first task');
-TodoActions.addTodo('Another task');
-TodoActions.addTodo('Finish this tutorial');
 registerServiceWorker();

@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import AppContainer from './containers/AppContainer';
-import './App.css';
+import React, { Component } from 'react'
+import './styles/App.css'
+import TodoApp from './todo-redux-thunk/components/TodoApp'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <AppContainer/>
+        <TodoApp/>
       </div>
     );
   }
