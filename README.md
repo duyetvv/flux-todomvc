@@ -134,13 +134,14 @@ export type RuleResult = {
 
 ### Step 1: Prepare validation validation rules
 The validation rule should have 2 key functions: 
-  ```ts
   # 1. Test - implement the validate function.
+  ```ts
   test({ val }: RuleParam): boolean {
     return !!val && val.length > 0;
   }
-  
-  # 2. Res: return the response of the validate function.
+  ```
+  #### 2. Res: return the response of the validate function.
+  ```ts
   res({ name, arg }: RuleParam): RuleResponse {
     // const that = this;
     return {
